@@ -6,7 +6,7 @@ A simple, responsive Weather App that fetches and displays real-time weather inf
 
 ## 🔗 Live Demo
 
-👉 [Check it out here](https://swaraj-unde.github.io/Weather-App/)
+👉 [Check it out here](https://weather-app-self-one-98.vercel.app/)
 
 ---
 
@@ -56,4 +56,3 @@ Made by **[Swaraj Unde]**
 This project is open-source and free to use.
 
 ---
-

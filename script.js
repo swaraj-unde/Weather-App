@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   async function getData(city) {
-    const url = `http://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}&aqi=no`;
+    const url = `https://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}&aqi=no`;
     let response = await fetch(url);
     console.log("Status:", response.status);
     if (!response.ok) {

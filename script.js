@@ -1,4 +1,4 @@
-const apikey = "227fdb7d780b4a7e907140652250607";
+const apikey = "26c2dff86c69c57fa76736ce29249165";
 
 document.addEventListener("DOMContentLoaded", () => {
   let field = document.getElementById("cityname");
@@ -16,12 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   button.addEventListener("click", async () => {
     let city = field.value.trim();
-
     if (!city) return;
-
     try {
       let data = await getData(city);
-
       displayData(data);
     } catch {
       displayError();
@@ -32,14 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
     found.classList.remove("hidden");
     diserror.classList.add("hidden");
 
-    discity.innerText = data.location.name + ", " + data.location.country;
-    temp.innerText = `Temperature : ${data.current.temp_c}°C`;
-    weather.innerText = `Weather : ${data.current.condition.text}`;
-    image.src = `https:${data.current.condition.icon}`;
+    discity.innerText = `${data.name}, ${data.sys.country}`;
+    temp.innerText = `Temperature : ${data.main.temp}°C`;
+    weather.innerText = `Weather : ${data.weather[0].description}`;
+    image.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+
     setDate(data);
   }
+
   function setDate(data) {
-    const localDate = new Date(data.location.localtime);
+    const localTimeUTC = new Date((data.dt + data.timezone) * 1000);
     const options = {
       weekday: "long",
       year: "numeric",
@@ -49,22 +48,23 @@ document.addEventListener("DOMContentLoaded", () => {
       minute: "numeric",
       hour12: true,
     };
-    const formattedTime = localDate.toLocaleString("en-US", options);
-    time.innerText = `Local Time: ${formattedTime}`;
+    time.innerText = `Local Time: ${localTimeUTC.toLocaleString(
+      "en-US",
+      options
+    )}`;
   }
+
   function displayError() {
     found.classList.add("hidden");
     diserror.classList.remove("hidden");
   }
 
   async function getData(city) {
-    const url = `https://api.weatherapi.com/v1/current.json?key=${apikey}&q=${city}&aqi=no`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
     console.log(url);
     let response = await fetch(url);
     console.log("Status:", response.status);
-    if (!response.ok) {
-      throw new Error("City Not Found");
-    }
+    if (!response.ok) throw new Error("City Not Found");
     let data = await response.json();
     return data;
   }

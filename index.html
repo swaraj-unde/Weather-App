@@ -3,9 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Weather App</title>
-    <link rel="stylesheet" href="./style.css">
+
+    <link rel="icon" type="image/png" href="./favicon.png" />
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <meta
+      name="description"
+      content="Simple weather app that shows temperature, conditions, and local time using OpenWeather API."
+    />
+    <meta name="author" content="Swaraj Unde" />
+    <meta property="og:title" content="Weather App" />
+    <meta
+      property="og:description"
+      content="A modern weather app using OpenWeather API."
+    />
+    <meta
+      property="og:image"
+      content="https://weather-app-self-one-98.vercel.app/Demo.png"
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#1e88e5" />
   </head>
+
   <body>
     <div id="box">
       <h1 id="heading">Weather App</h1>
@@ -15,7 +38,7 @@
       </div>
       <div id="found" class="hidden">
         <h2 id="displaycity"></h2>
-        <img id="image" src="" alt="">
+        <img id="image" src="" alt="" />
         <p id="local"></p>
         <p id="Temp"></p>
         <p id="weather"></p>

@@ -1,6 +1,6 @@
 # 🌤️ Weather App
 
-A simple, responsive Weather App that fetches and displays real-time weather information using the [WeatherAPI](https://www.weatherapi.com/). Just enter the name of a city and get the current temperature, weather condition, icon, and local time!
+A simple, responsive Weather App that fetches and displays real-time weather information using the [OpenWeather API](https://openweathermap.org/api). Just enter the name of a city and get the current temperature, weather condition, icon, and local time!
 
 ---
 
@@ -20,8 +20,8 @@ A simple, responsive Weather App that fetches and displays real-time weather inf
 
 - 🌍 Real-time weather info for any city
 - 🌡️ Displays temperature in Celsius
-- 🌤️ Shows weather condition and icon
-- 🕒 Local time of the selected city
+- 🌤️ Shows weather condition and a custom weather icon
+- 🕒 Local time of the selected city (converted using timezone offset)
 - ⚠️ Error message if city is not found
 - 📱 Fully responsive design
 
@@ -32,7 +32,7 @@ A simple, responsive Weather App that fetches and displays real-time weather inf
 - HTML5
 - CSS3
 - JavaScript (Vanilla)
-- [WeatherAPI.com](https://www.weatherapi.com/)
+- [OpenWeatherMap API](https://openweathermap.org/api)
 
 ---
 
@@ -54,5 +54,3 @@ Made by **[Swaraj Unde]**
 ## 📄 License
 
 This project is open-source and free to use.
-
----

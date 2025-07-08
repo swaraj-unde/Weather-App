@@ -105,8 +105,17 @@ body {
   padding: 1rem;
   font-weight: bold;
 }
-#image{
-    height: 50px;
+#image {
+  height: 100px;
+  width: 100px;
+  padding: 0.8rem;
+  border-radius: 2rem;
+  background: radial-gradient(circle at center, #1565c0 40%, #1e88e5 100%);
+  box-shadow: 0 8px 20px rgba(21, 101, 192, 0.4);
+  margin: 0 auto 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .hidden {
   display: none;
